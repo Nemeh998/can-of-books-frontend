@@ -4,12 +4,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom";
 import './header.css';
 import LogoutButton from './LogoutButton';//1
-import Login from './Login'
+// import Login from './Login'
 import {withAuth0} from '@auth0/auth0-react'
+import LoginButton from './LoginButton';
 class Header extends React.Component {
   render() {
     
-    // const {isAuthenticated}=this.props.auth0;
+    const {isAuthenticated}=this.props.auth0;
     return(
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand>My Favorite Books</Navbar.Brand>
@@ -17,7 +18,7 @@ class Header extends React.Component {
           <Link to="/profile">Profile</Link>
           {/* TODO: if the user is logged in, render the `LogoutButton` - if the user is logged out, render the `LoginButton` */}
 
-          {(this.props.auth0.isAuthenticated)?<Login/> :<LogoutButton/>}
+          {(isAuthenticated)?<LogoutButton/> :<LoginButton />}
 
    
       </Navbar>
