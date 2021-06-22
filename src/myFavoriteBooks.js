@@ -20,7 +20,8 @@ class MyFavoriteBooks extends React.Component {
   componentDidMount =async () =>
   {
     const {user} = this.props.auth0;
-    const myBooks= `${process.env.REACT_APP_HOST}/books?email=${user.email}`;
+    const myBooks= `${process.env.REACT_APP_HOST}/book?email=${user.email}`;
+    console.log(myBooks);
     const urlBook= await axios.get(myBooks);
     this.setState({book:urlBook.data});
   }
@@ -32,7 +33,7 @@ class MyFavoriteBooks extends React.Component {
           This is a collection of my favorite books
         </p>
 { this.state.book.map(item =>{
-return <Card style={{ width: '18em'}}>
+return<Card style={{ width: '18em'}}>
   <ListGroup variant="flush">
     <ListGroup.Item as="li" active>
       book num {item.name}
@@ -44,7 +45,7 @@ return <Card style={{ width: '18em'}}>
     <ListGroup.Item>
     </ListGroup.Item>
   </ListGroup>
-</Card>;
+</Card>
 
 })}
 
