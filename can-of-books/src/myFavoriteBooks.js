@@ -10,7 +10,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card'
 
-import bookForm from './bookForm'
+import BookForm from './BookForm'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Row,Col,Form} from 'react-bootstrap/';
@@ -36,22 +36,8 @@ class MyFavoriteBooks extends React.Component {
      
 
       <Jumbotron>
-        <Form>
-  <Row>
-    <Col xs={5}>
-      <Form.Control placeholder="City" />
-    </Col>
-    <Col>
-      <Form.Control placeholder="State" />
-    </Col>
-    <Col>
-      <Form.Control placeholder="Zip" />
-    </Col>
-    <Col>
-      <Form.Control placeholder="Zip" />
-    </Col>
-  </Row>
-  </Form>
+      
+
         <h1>My Favorite Books</h1>
         <p>
           This is a collection of my favorite books
