@@ -3,7 +3,7 @@ import Header from './Header';
 import IsLoadingAndError from './IsLoadingAndError';
 import Footer from './Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { useAuth0 } from '@auth0/auth0-react';
+
 import Profile from './Profile';
 import {
   BrowserRouter as Router,
@@ -11,9 +11,9 @@ import {
   Route
 } from "react-router-dom";
 import MyFavoriteBooks from './myFavoriteBooks';//1
-import Login from './Login';
-import {withAuth0} from '@auth0/auth0-react';
 
+import Login from './Login';
+import { withAuth0 } from '@auth0/auth0-react';
 class App extends React.Component {
  
 
@@ -25,7 +25,7 @@ class App extends React.Component {
     return(
       <>
         <Router>
-          <IsLoadingAndError>
+          {/* <IsLoadingAndError> */}
             <Header />
               <Switch>
                 <Route exact path="/">
@@ -43,7 +43,7 @@ class App extends React.Component {
 
               </Switch>
             <Footer />
-          </IsLoadingAndError>
+          {/* </IsLoadingAndError> */}
         </Router>
       </>
     )
